@@ -22,6 +22,15 @@
 			"host": "www",
 			"pointsTo": "app.bubble.io",
 			"ttl": 3600
+		},
+		{
+			"groupId": "verify",
+			"type": "TXT",
+			"host": "_cf-custom-hostname",
+			"data": "%cfToken%",
+			"ttl": 3600,
+			"txtConflictMatchingMode": "All"
 		}
-	]
+	],
+	"variableDescription": "cfToken is the custom hostname ownership token Cloudflare issues for the domain; Cloudflare compares the TXT value exactly, so it cannot carry a prefix."
 }
